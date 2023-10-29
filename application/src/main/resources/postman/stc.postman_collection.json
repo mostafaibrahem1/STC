@@ -1,0 +1,421 @@
+{
+	"info": {
+		"_postman_id": "f2863d23-e3b8-433d-bb50-f88d7718bbf7",
+		"name": "stc",
+		"description": "postman collection to create space/folder/file",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14081611"
+	},
+	"item": [
+		{
+			"name": "items",
+			"item": [
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/item/file-metadata/508ad189-2199-453f-ac5b-6e655e256f99?userEmail=view@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"item",
+								"file-metadata",
+								"508ad189-2199-453f-ac5b-6e655e256f99"
+							],
+							"query": [
+								{
+									"key": "userEmail",
+									"value": "view@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create space",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userEmail\":\"mm@gm.com\",\n    \"name\": \"stc-space\",\n    \"permissionGroupId\":\"1\"\n\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/item/space",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"item",
+								"space"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "createTeam",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userEmail\":\"mm@gm.com\",\n    \"name\": \"stc-space\",\n    \"permissionGroupId\":\"1\"\n\n }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/item/space",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"item",
+										"space"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Oct 2023 16:37:17 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "12fde8d8-3bc5-4c93-8985-76a2c9945fb1"
+						}
+					]
+				},
+				{
+					"name": "create folder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userEmail\":\"edit@gmail.com\",\n    \"name\": \"backend\",\n    \"permissionGroupId\":\"1\"\n\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/item/stc-space/folder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"item",
+								"stc-space",
+								"folder"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create space Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userEmail\":\"edit@gmail.com\",\n    \"name\": \"backend\",\n    \"permissionGroupId\":\"1\"\n\n }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/item/stc-space/folder",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"item",
+										"stc-space",
+										"folder"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Oct 2023 16:37:30 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "7d927fae-3515-461a-8b67-0f63c05aae40"
+						}
+					]
+				},
+				{
+					"name": "create file",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/mostafa/Downloads/sst.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/item/stc-space/backend/file?userEmail=edit@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"item",
+								"stc-space",
+								"backend",
+								"file"
+							],
+							"query": [
+								{
+									"key": "userEmail",
+									"value": "edit@gmail.com"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create file",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/Users/mostafa/Downloads/sst.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/item/stc-space/backend/file?userEmail=edit@gmail.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"item",
+										"stc-space",
+										"backend",
+										"file"
+									],
+									"query": [
+										{
+											"key": "userEmail",
+											"value": "edit@gmail.com"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Oct 2023 16:38:16 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "eb50ecee-5f74-463a-b7f8-06430b10b19b"
+						}
+					]
+				},
+				{
+					"name": "download file",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/mostafa/Downloads/sst.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/item/file-download/eb50ecee-5f74-463a-b7f8-06430b10b19b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"item",
+								"file-download",
+								"eb50ecee-5f74-463a-b7f8-06430b10b19b"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create file",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/Users/mostafa/Downloads/sst.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/item/stc-space/backend/file?userEmail=edit@gmail.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"item",
+										"stc-space",
+										"backend",
+										"file"
+									],
+									"query": [
+										{
+											"key": "userEmail",
+											"value": "edit@gmail.com"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Oct 2023 16:38:16 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "eb50ecee-5f74-463a-b7f8-06430b10b19b"
+						}
+					]
+				}
+			]
+		}
+	]
+}
