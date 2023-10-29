@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  psql-db:
+    image: postgres
+    container_name: psql-db
+    restart: always
+    environment:
+      - POSTGRES_USER=stc-dev
+      - POSTGRES_PASSWORD=stc-dev@123
+      - POSTGRES_DB=stc-dev
+    ports:
+      - '5444:5444'
+
+  stc:
+    container_name: stc_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://psql-db/stc-dev
+      - SPRING_DATASOURCE_USERNAME=stc-dev
+      - SPRING_DATASOURCE_PASSWORD=stc-dev@123
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    depends_on:
+      - psql-db
